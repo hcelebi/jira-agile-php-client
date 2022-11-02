@@ -35,6 +35,7 @@ class BoardService
     public function getBoards(GetBoardsRequest $getBoardsRequest) : BoardsResult
     {
         $response = $this->client->request('GET', 'board/');
-        return BoardResultMapper::map($response);
+        $responseData = json_decode($response->getBody()->getContents());
+        return BoardResultMapper::map($responseData);
     }
 }
