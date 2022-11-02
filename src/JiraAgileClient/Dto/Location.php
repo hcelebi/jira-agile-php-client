@@ -4,57 +4,57 @@ namespace JiraAgileClient\Dto;
 
 class Location
 {
-    /** @var int */
+    /** @var ?int */
     private $projectId;
-    /** @var string */
+    /** @var ?string */
     private $projectName;
-    /** @var string */
+    /** @var ?string */
     private $projectKey;
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getProjectId(): int
+    public function getProjectId(): ?int
     {
         return $this->projectId;
     }
 
     /**
-     * @param int $projectId
+     * @param int|null $projectId
      */
-    public function setProjectId(int $projectId): void
+    public function setProjectId(?int $projectId): void
     {
         $this->projectId = $projectId;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getProjectName(): string
+    public function getProjectName(): ?string
     {
         return $this->projectName;
     }
 
     /**
-     * @param string $projectName
+     * @param string|null $projectName
      */
-    public function setProjectName(string $projectName): void
+    public function setProjectName(?string $projectName): void
     {
         $this->projectName = $projectName;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getProjectKey(): string
+    public function getProjectKey(): ?string
     {
         return $this->projectKey;
     }
 
     /**
-     * @param string $projectKey
+     * @param string|null $projectKey
      */
-    public function setProjectKey(string $projectKey): void
+    public function setProjectKey(?string $projectKey): void
     {
         $this->projectKey = $projectKey;
     }
