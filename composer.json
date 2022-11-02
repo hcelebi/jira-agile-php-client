@@ -1,5 +1,5 @@
 {
-    "name": "hcelebi/jira-php-client",
+    "name": "hcelebi/jira-agile-php-client",
     "description": "PHP Client For Jira API",
     "require": {
         "guzzlehttp/guzzle": "~6.0",
