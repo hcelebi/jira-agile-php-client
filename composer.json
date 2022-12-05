@@ -3,7 +3,8 @@
     "description": "PHP Client For Jira API",
     "require": {
         "guzzlehttp/guzzle": "~6.0",
-        "monolog/monolog": "^1.24"
+        "monolog/monolog": "^1.24",
+        "hcelebi/jira-php-client": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "7.5.*"
