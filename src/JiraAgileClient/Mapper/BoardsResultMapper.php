@@ -6,7 +6,7 @@ use JiraAgileClient\Dto\Board;
 use JiraAgileClient\Dto\BoardsResult;
 use JiraAgileClient\Dto\Location;
 
-class BoardResultMapper
+class BoardsResultMapper
 {
     public static function getBoard(\stdClass $response) : Board
     {

@@ -4,7 +4,10 @@ namespace JiraAgileClient\Service;
 
 use GuzzleHttp\Client;
 use JiraAgileClient\Dto\BoardsResult;
-use JiraAgileClient\Mapper\BoardResultMapper;
+use JiraAgileClient\Dto\SprintsResult;
+use JiraAgileClient\Mapper\BoardsResultMapper;
+use JiraAgileClient\Mapper\SprintsResultMapper;
+use JiraAgileClient\Request\GetAllSprintsRequest;
 use JiraAgileClient\Request\GetBoardsRequest;
 
 class BoardService
@@ -36,6 +39,13 @@ class BoardService
     {
         $response = $this->client->request('GET', 'board/');
         $responseData = json_decode($response->getBody()->getContents());
-        return BoardResultMapper::map($responseData);
+        return BoardsResultMapper::map($responseData);
+    }
+
+    public function getAllSprints(GetAllSprintsRequest $getAllSprintsRequest) : SprintsResult
+    {
+        $response = $this->client->request('GET', 'board/' . $getAllSprintsRequest->getBoardId() . "/sprints");
+        $responseData = json_decode($response->getBody()->getContents());
+        return SprintsResultMapper::map($responseData);
     }
 }
