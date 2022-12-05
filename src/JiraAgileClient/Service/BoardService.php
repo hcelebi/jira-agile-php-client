@@ -44,7 +44,7 @@ class BoardService
 
     public function getAllSprints(GetAllSprintsRequest $getAllSprintsRequest) : SprintsResult
     {
-        $response = $this->client->request('GET', 'board/' . $getAllSprintsRequest->getBoardId() . "/sprint");
+        $response = $this->client->request('GET', 'board/' . $getAllSprintsRequest->getBoardId() . "/sprint?startAt=" . $getAllSprintsRequest->getStartAt() . "&maxResults=" . $getAllSprintsRequest->getMaxResults());
         $responseData = json_decode($response->getBody()->getContents());
         return SprintsResultMapper::map($responseData);
     }
