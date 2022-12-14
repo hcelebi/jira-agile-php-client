@@ -36,6 +36,6 @@ class IssueService
     }
 
     public function updateRank(UpdateRankRequest $updateRankRequest) : void {
-        $this->client->put("issue/rank", $updateRankRequest->toArray());
+        $this->client->request("PUT","issue/rank", ["json" => $updateRankRequest->toArray(), "headers" => ['Accept' => 'application/json']]);
     }
 }
